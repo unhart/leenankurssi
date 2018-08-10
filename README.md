@@ -1,4 +1,6 @@
 # :: Leenankurssi
-Erinkummaisten kurssitöiden palautus ja git gud!
 
-+ Varjorepo lisätty
+[revisions]
+2018.08.10
++ Some changes for files and folders
++ Repo mirror is added
