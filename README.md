@@ -1,2 +1,2 @@
-# leenankurssi
+# Leenankurssi
 Kurssitöiden palautus
