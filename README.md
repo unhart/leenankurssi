@@ -1,6 +1,13 @@
 # :: Leenankurssi
 
+
 [revisions]
+
+2018.08.15 
++ Changes for Scrum-files, renamed collaboration to harj2 and included pdf-file from it.
++ Added Scrum collaboration powerpoint
++ Added Scrum-files, include of PDF and Powerpoint.
+
 2018.08.10 #2
 + Changes for readme.md
 
