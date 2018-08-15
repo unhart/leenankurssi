@@ -3,6 +3,9 @@
 
 [revisions]
 
+2018.08.15 
++ Added Scrum powerpoint
+
 2018.08.10 #2
 + Changes for readme.md
 
