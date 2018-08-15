@@ -4,7 +4,8 @@
 [revisions]
 
 2018.08.15 
-+ Added Scrum collaboration powerpoint.
++ Changes for Scrum-files, renamed collaboration to harj2 and included pdf-file from it.
++ Added Scrum collaboration powerpoint
 + Added Scrum-files, include of PDF and Powerpoint.
 
 2018.08.10 #2
