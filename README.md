@@ -3,6 +3,9 @@
 
 [revisions]
 
+2018.08.16
++ Added harj2_huoneentaulu.pdf as additional
+
 2018.08.15 
 + Changes for Scrum-files, renamed collaboration to harj2 and included pdf-file from it.
 + Added Scrum collaboration powerpoint
