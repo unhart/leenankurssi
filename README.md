@@ -1,5 +1,4 @@
-#
-## :: leenankurssi
+# :: leenankurssi
 
 **[revisions]**
 
