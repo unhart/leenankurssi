@@ -2,6 +2,9 @@
 
 **[revisions]**
 
+2018.08.29
++ Added haiseva_koodi.txt
+
 2018.08.23
 + Added harj4-files 
 
