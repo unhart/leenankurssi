@@ -20,7 +20,7 @@
 
 class image(check($function),$variable1=null,$variable2=null,$resized_width=null,$resized_height=null)
 {
-	// check of function
+	// check of functions
 	function check($function) {
 		if(function_exists($function) {
 			switch ($function) {
@@ -36,7 +36,7 @@ class image(check($function),$variable1=null,$variable2=null,$resized_width=null
 			}
 		}
 		else {
-			echo "Error with "$function", Please and check your inputs and function calls";
+			echo "Error with "$function", Please, check your function and variables for it";
 			exit();
 		}
 	}
