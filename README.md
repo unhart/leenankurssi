@@ -5,6 +5,7 @@
 2018.09.05
 + Added harj6-files
 + Renamed some of files to corresponding title/name
++ Corrected master
 
 2018.08.30
 + Added harj5-laatu.pdf
