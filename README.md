@@ -2,6 +2,9 @@
 
 **[revisions]**
 
+2018.09.05
++ Added harj6-pdf
+
 2018.08.30
 + Added harj5-laatu.pdf
 
