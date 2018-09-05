@@ -1,0 +1,14 @@
+#
+# Haiseva koodi
+# Anton Hussi
+# 17TVDO02
+# 
+
+:: Yleinen
+Blogissa käsitellään koodia luokkien sisällä tai luokkien välillä ja mainitaan mm. kommentointia, arugemntointia/määritteiden, ns. kloonikoodia (eli kommennot ja funktioit on kloonattu), kompleksinen koodi tai funktioit jotka eivät vastaa nimeä. Lisäksi on keskustelua luokkien samankaltaisuuksista, jotka voitaisiin hoitaa yhdellä samalla luokalla, kuhan argumentoidaan monipuolisemmaksi ja edelleen tietyt koodit voisi yhdistää luokkiin ja sitä kautta käytää monipuolisemmin. Näitä voidaan lyhyesti kutsua nimellä haiseva koodi (Code Smells), mutta toisaalta ihminen on joka kirjottaa koodia ja eikä robootit. 
+
+Lukemalla blogia ja miettimällä omaa tapaa kirjottaa koodia. Pyrin aina kommentoimaan koodini ja erityisesti kun kirjoitan PHP-koodia on dokumentoida argumentit ja mihin luokkaan viitataan. Yleensä kirjotan SQL-luokan ja arugemnenteilla, jota voidaan käyttää monipuolisesti.. Rehellisesti tykästyin kirjottamaan functiot luokkiin ja sitä kauttaa käsitellä niitä, sekä selvästi kategroida niitä. Niistä tuli välillä ihan hermottomia, mutta ne pääasialliseti toimi lisäämällä vaan luokka, ja homma toimi.
+
+
+:: Lähde
+https://blog.codinghorror.com/code-smells/

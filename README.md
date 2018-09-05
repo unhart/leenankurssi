@@ -6,6 +6,13 @@
 + Added harj6-files
 + Renamed some of files to corresponding title/name
 
+2018.08.30
++ Added harj5-laatu.pdf
+
+2018.08.29
++ Added haiseva_koodi.txt
++ Added harj5-koodinsiivous.php
+
 2018.08.23
 + Added harj4-files 
 
