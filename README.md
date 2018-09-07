@@ -1,6 +1,8 @@
 # :: leenankurssi
 
 **[revisions]**
+2018.09.07
++ Added harj8-osa1 and osa2 pdf-files
 
 2018.09.05
 + Added harj6-files
