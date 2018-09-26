@@ -1,6 +1,11 @@
 # :: leenankurssi
 
 **[revisions]**
+
+2018.09.26
++ Added harj7+9
++ Added all of the Google Docs "files" and updated folders
+
 2018.09.07
 + Added harj8-osa1 and osa2 pdf-files
 
