@@ -3,11 +3,11 @@
 **[revisions]**
 
 2019.10.10
-+ Added Asuntovuokraus-webpage, version 1.0\n
-  Site is responsive aka one site for multiple platforms (Computers, Mobilephones, etc).\n 
-  [site structure]\n
-  /index.html\n
-  /style/*.css\n
++ Added Asuntovuokraus-webpage, version 1.0  
+  Site is responsive aka one site for multiple platforms (Computers, Mobilephones, etc).   
+  [site structure]  
+  /index.html  
+  /style/*.css  
   /style/*.jpg, *.png
 
 2018.09.26
