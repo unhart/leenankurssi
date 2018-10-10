@@ -2,6 +2,14 @@
 
 **[revisions]**
 
+2019.10.10
++ Added Asuntovuokraus-webpage, version 1.0
+  Site is responsive aka one site for multiple platforms (Computers, Mobilephones, etc). 
+  [site structure]
+  /index.html
+  /style/*.css
+  /style/*.jpg, *.png
+
 2018.09.26
 + Added harj7+9
 + Added all of the Google Docs "files" and updated folders
