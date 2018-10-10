@@ -1,7 +1,5 @@
 # :: leenankurssi
-
 **[revisions]**
-
 **2019.10.10**
 + Added Asuntovuokraus-webpage, version 1.0  
   Site is responsive aka one site for multiple platforms (Computers, Mobilephones, etc).   
