@@ -2,8 +2,8 @@
 **[revisions]**
 
 **2018.10.11**
-+ Additional changes for webpage structure  
-  [site structure]  
++ Additional changes for tree of Webpage
+  [tree]  
   ./index.html  
   ./logo-001.ai  
   ./logo-001.png  
@@ -14,7 +14,7 @@
 **2019.10.10**
 + Added Asuntovuokraus-webpage, version 1.0  
   Site is responsive aka one site for multiple platforms (Computers, Mobilephones, etc).   
-  [site structure]  
+  [tree]  
   ./index.html  
   ./style/*.css  
   ./style/*.jpg, *.png
