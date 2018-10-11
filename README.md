@@ -2,7 +2,7 @@
 **[revisions]**
 
 **2018.10.11**
-+ Additional changes for tree of Webpage
++ Additional changes for tree of Webpage  
   [tree]  
   ./index.html  
   ./logo-001.ai  
