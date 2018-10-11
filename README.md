@@ -1,5 +1,6 @@
 # :: leenankurssi
 **[revisions]**
+
 **2018.10.11**
 + Additional changes for webpage structure  
   [site structure]  
