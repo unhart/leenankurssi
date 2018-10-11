@@ -1,12 +1,22 @@
 # :: leenankurssi
 **[revisions]**
+''2018.10.11**
++ Additional changes for webpage structure  
+  [site structure]  
+  ./index.html  
+  ./logo-001.ai  
+  ./logo-001.png  
+  ./logo-001B*.png (logo and files for document)  
+  ./style/logo-v2*.png (monochrome and coloured version)  
++ Updated html and css-files  
+
 **2019.10.10**
 + Added Asuntovuokraus-webpage, version 1.0  
   Site is responsive aka one site for multiple platforms (Computers, Mobilephones, etc).   
   [site structure]  
-  /index.html  
-  /style/*.css  
-  /style/*.jpg, *.png
+  ./index.html  
+  ./style/*.css  
+  ./style/*.jpg, *.png
 
 **2018.09.26**
 + Added harj7+9
