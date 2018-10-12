@@ -14,7 +14,7 @@ body,html {
 }
 
 /* defaulting of p and a-size */
-p, a, li, ul, select, form, img {
+p, a, li, ul, select, form, input, img {
 	color:#000000;
 	margin:0;
 	padding:0;
@@ -98,7 +98,7 @@ ul.topnav {
 	margin:0 auto;
     overflow:hidden;
     /* background-color:#333; */
-	font-size:125%;
+	font-size:120%;
 }
 
 ul.topnav li {
@@ -112,7 +112,7 @@ ul.topnav li a {
     color:#ec008c;
 	font-stretch:expanded;
     text-align: center;
-    padding: 25px 25px;
+    padding:20px;
     text-decoration: none;
 }
 
@@ -174,6 +174,10 @@ ul.topnav li a.active {
 	margin:50px;
 }
 
+.ma50ulr {
+	margin:50px 50px 0 40px;
+}
+
 .ma25lr {
 	margin:0 25px 0 25px;
 }
@@ -200,7 +204,7 @@ ul.topnav li a.active {
 }
 
 .block {
-	display:block!important;
+	display:block;
 	float:left;
 	height:auto;
 }
@@ -210,6 +214,16 @@ ul.topnav li a.active {
 	min-width:600px;
 }
 
+.tablink-div {
+	clear:both;
+}
+
+.tablink-div:after, .tablink-div:before {
+	content:"";
+	display:table;
+	clear:both;	
+}
+
 /* img */
 .w30per {
 	width:31.3%;
@@ -217,9 +231,18 @@ ul.topnav li a.active {
 	padding:1%;
 }
 
+.w40per {
+	width:40%;
+}
+
 .w50per {
 	width:50%!important;
 	min-width:300px;
+}
+
+.w70per {
+	width:70%;
+	margin:0 15% 0 15%;
 }
 
 .w100per {
@@ -277,13 +300,39 @@ select {
 	font-size:100%;
 	width:200px;
 	height:40px;
-	margin:0 25px 0 0;
+	margin:0 25px 0;
 	background:#545e48;
 	color:#ffffff;
 }
 
 select:hover, select:active {
 	color:#ffffff;
+}
+
+input,textarea {
+	width:92%;
+	height:30px;
+	padding:1%;
+	margiN:2% 2% 0 2%;
+	border:1px solid blue;
+	}
+
+input.half {
+	width:42.8%;
+}
+
+textarea {
+	height:600px;
+}
+
+input[type=submit], input[type=reset] {
+	width:autO;
+	height:50px;
+	paddin:2%;
+	margin:5%;
+	background:#ec008c;
+	color:#ffffff;
+	font-size:125%;
 }
 
 /* footer */

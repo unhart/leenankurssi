@@ -15,160 +15,217 @@
 
 <!-- body -->
 <body class="min-width">
+	<script>
+		function openTab(evt, Tab) {
+			var i, x, tablinks;
+			x = document.getElementsByClassName("tablink-div");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablink");
+			for (i = 0; i < x.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(Tab).style.display = "block!important";
+			evt.currentTarget.className += " active";
+		}
+	</script>
 	<div class="block w100per">
 		<div class="left block w100per">
-			<a href="#etsivu" alt="Takaisin etusivulle"><img class="logo" src="style/logo-v2b.png"></a>
-		<!-- </div> -->
-<!-- 		<div class="right ma50 debug">
-			<a class="navi-link" href="/haku" alt="Siirry hakuun" align="center"><img class="navi-link-img" src="style/link_lainattu.jpg">Haku</a>
-			<a class="navi-link" href="/ilmoitus" alt="Siirry ilmoitukseen" align="center"><img class="navi-link-img" src="style/link_lainattu.jpg">Ilmoitukset</a>
-			<a class="navi-link" href="/kirjaudu" alt="Siirry kirjaudu" align="center"><img class="navi-link-img" src="style/link_lainattu.jpg">Kirjaudu</a>
-			<a class="navi-link" href="/yhteystiedot" alt="Siirry yhteystietoihin" align="center"><img class="navi-link-img" src="style/link_lainattu.jpg">Yhteystiedot</a>
-		</div> -->
-	<!-- </div> -->
+			<a href="#etusivu" alt="Takaisin etusivulle"><img class="logo" src="style/logo-v2b.png"></a>
 		<!-- <div class="right block pa25"> -->
 			<ul class="topnav">
-				<li><a href="#haku">Haku</a></li>
-				<li><a class="active" href="#ilmoitukset">Ilmoitukset</a></li>
-				<li><a href="#kirjaudu">Kirjaudu</a></li>
-				<li><a href="#yhteystiedot">Yhteystiedot</a></li>
+				<li><a href="#haku" onclick="openTab(event, 'haku')">Haku</a></li>
+				<li><a class="active" href="#ilmoitukset" onclick="openTab(event, 'ilmoitukset')">Ilmoitukset</a></li>
+				<li><a href="#uusi" onclick="openTab(event, 'uusi')">Uusi ilmoitus</a></li>
+				<li><a href="#yhteystiedot"onclick="openTab(events, 'yhteystiedot')">Yhteystiedot</a></li>
 			</ul>
 		</div>
 	</div>
-	<div class="block w100per bg02">
-		
-		<div class="left">		
-			<p class="pa10 ma25lr negative">Sijainti :: <a class="negative" href="#etusivu">Etusivulla</a></p>
-		</div>
-		<div class="right">
-			<p class="pa10 negative">Näytä ilmoitukset:</p>
-			<select class="pa10 bg02">
-				<option value="uusimmat asunnot">Uusimmat asunnot</option>
-				<option value="uusimmat asunnot">Uusimmat ilmoitukset</option>
-			</select>
+
+	<div id="haku" class="tablink-div w100per h70per" style="display:none">
+		<div class="block w100per bg02">
+			<div class="left">		
+				<p class="pa10 ma25lr negative">Sijainti :: Haku</p>
+			</div>
 		</div>
 	</div>
-	<div class="block w100per h70per">
-		<!-- row one on FHD -->
-		<a href="#ilmoitus1">
-			<div class="highlight w30per">
-				<img class="lainattu" src="style/talo_lainattu.jpg">
-				<div class="info">
-					<p class="tleft fs175">Hervanta, Tampere</p>
-					<p class="tleft fs150">3h + kk, S</p>
-				</div>
-				<div class="info">
-					<p class="tright fs150">50m2</p>
-					<p class="tright fs150 bg02 white">795 eur/kk</p>
-				</div>
+	<!-- ilmoitukset -->
+	<div id="ilmoitukset" class="tablink-div w100per h70per"  style="display:none">
+		<div class="block w100per bg02">
+			<div class="left">		
+				<p class="pa10 ma25lr negative">Sijainti :: Ilmoitukset</p>
 			</div>
-		</a>
-		<a href="#ilmoitus2">
-			<div class="highlight w30per">
-				<img class="lainattu" src="style/talo_lainattu.jpg">
-				<div class="info">
-					<p class="tleft fs175">Hervanta, Tampere</p>
-					<p class="tleft fs150">3h + kk, S</p>
-				</div>
-				<div class="info">
-					<p class="tright fs150">50m2</p>
-					<p class="tright fs150 bg02 white">795 eur/kk</p>
-				</div>
+			<div class="right">
+				<p class="pa10 negative">Näytä ilmoitukset:</p>
+				<select class="pa10 bg02">
+					<option value="uusimmat asunnot">Uusimmat asunnot</option>
+					<option value="uusimmat asunnot">Uusimmat ilmoitukset</option>
+				</select>
 			</div>
-		</a>
-		<a href="#ilmoitus3">
-			<div class="highlight w30per">
-				<img class="lainattu" src="style/talo_lainattu.jpg">
-				<div class="info">
-					<p class="tleft fs175">Hervanta, Tampere</p>
-					<p class="tleft fs150">3h + kk, S</p>
+		</div>
+		<div class="block w100per h70per">
+			<!-- row one on FHD -->
+			<a href="#ilmoitus1">
+				<div class="highlight w30per">
+					<img class="lainattu" src="style/talo_lainattu.jpg">
+					<div class="info">
+						<p class="tleft fs175">Hervanta, Tampere</p>
+						<p class="tleft fs150">3h + kk, S</p>
+					</div>
+					<div class="info">
+						<p class="tright fs150">50m2</p>
+						<p class="tright fs150 bg02 white">795 eur/kk</p>
+					</div>
 				</div>
-				<div class="info">
-					<p class="tright fs150">50m2</p>
-					<p class="tright fs150 bg02 white">795 eur/kk</p>
+			</a>
+			<a href="#ilmoitus2">
+				<div class="highlight w30per">
+					<img class="lainattu" src="style/talo_lainattu.jpg">
+					<div class="info">
+						<p class="tleft fs175">Hervanta, Tampere</p>
+						<p class="tleft fs150">3h + kk, S</p>
+					</div>
+					<div class="info">
+						<p class="tright fs150">50m2</p>
+						<p class="tright fs150 bg02 white">795 eur/kk</p>
+					</div>
 				</div>
+			</a>
+			<a href="#ilmoitus3">
+				<div class="highlight w30per">
+					<img class="lainattu" src="style/talo_lainattu.jpg">
+					<div class="info">
+						<p class="tleft fs175">Hervanta, Tampere</p>
+						<p class="tleft fs150">3h + kk, S</p>
+					</div>
+					<div class="info">
+						<p class="tright fs150">50m2</p>
+						<p class="tright fs150 bg02 white">795 eur/kk</p>
+					</div>
+				</div>
+			</a>
+			<!-- row two on FHD -->
+			<a href="#ilmoitus4">
+				<div class="highlight w30per">
+					<img class="lainattu" src="style/talo_lainattu.jpg">
+					<div class="info">
+						<p class="tleft fs175">Hervanta, Tampere</p>
+						<p class="tleft fs150">3h + kk, S</p>
+					</div>
+					<div class="info">
+						<p class="tright fs150">50m2</p>
+						<p class="tright fs150 bg02 white">795 eur/kk</p>
+					</div>
+				</div>
+			</a>
+			<a href="#ilmoitus5">
+				<div class="highlight w30per">
+					<img class="lainattu" src="style/talo_lainattu.jpg">
+					<div class="info">
+						<p class="tleft fs175">Hervanta, Tampere</p>
+						<p class="tleft fs150">3h + kk, S</p>
+					</div>
+					<div class="info">
+						<p class="tright fs150">50m2</p>
+						<p class="tright fs150 bg02 white">795 eur/kk</p>
+					</div>
+				</div>
+			</a>
+			<a href="#ilmoitus6">
+				<div class="highlight w30per">
+					<img class="lainattu" src="style/talo_lainattu.jpg">
+					<div class="info">
+						<p class="tleft fs175">Hervanta, Tampere</p>
+						<p class="tleft fs150">3h + kk, S</p>
+					</div>
+					<div class="info">
+						<p class="tright fs150">50m2</p>
+						<p class="tright fs150 bg02 white">795 eur/kk</p>
+					</div>
+				</div>
+			</a>
+			<!-- row three on FHD-->
+			<a href="#ilmoitus4">
+				<div class="highlight w30per">
+					<img class="lainattu" src="style/talo_lainattu.jpg">
+					<div class="info">
+						<p class="tleft fs175">Hervanta, Tampere</p>
+						<p class="tleft fs150">3h + kk, S</p>
+					</div>
+					<div class="info">
+						<p class="tright fs150">50m2</p>
+						<p class="tright fs150 bg02 white">795 eur/kk</p>
+					</div>
+				</div>
+			</a>
+			<a href="#ilmoitus5">
+				<div class="highlight w30per">
+					<img class="lainattu" src="style/talo_lainattu.jpg">
+					<div class="info">
+						<p class="tleft fs175">Hervanta, Tampere</p>
+						<p class="tleft fs150">3h + kk, S</p>
+					</div>
+					<div class="info">
+						<p class="tright fs150">50m2</p>
+						<p class="tright fs150 bg02 white">795 eur/kk</p>
+					</div>
+				</div>
+			</a>
+			<a class="w30per block" href="#ilmoitus6">
+				<div class="highlight w30per">
+					<img class="lainattu" src="style/talo_lainattu.jpg">
+					<div class="info">
+						<p class="tleft fs175">Hervanta, Tampere</p>
+						<p class="tleft fs150">3h + kk, S</p>
+					</div>
+					<div class="info">
+						<p class="tright fs150">50m2</p>
+						<p class="tright fs150 bg02 white">795 eur/kk</p>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+	<!-- ilmoitukset -->
+	<div id="uusi" class="tablink-div w100per h70per">
+		<div class="block w100per bg02">
+			<div class="left">		
+				<p class="pa10 ma25lr negative">Sijainti :: Uusi asuntoilmoitus</p>
 			</div>
-		</a>
-		<!-- row two on FHD -->
-		<a href="#ilmoitus4">
-			<div class="highlight w30per">
-				<img class="lainattu" src="style/talo_lainattu.jpg">
-				<div class="info">
-					<p class="tleft fs175">Hervanta, Tampere</p>
-					<p class="tleft fs150">3h + kk, S</p>
-				</div>
-				<div class="info">
-					<p class="tright fs150">50m2</p>
-					<p class="tright fs150 bg02 white">795 eur/kk</p>
-				</div>
+		</div>
+		<div class="debug left automargin w70per min-width h70per">
+			<form action="hardur.php">
+				<!-- <input class="block w100per" type="text" id="f_name" placeholder="Syötä etuinimi"> -->
+				<!-- <input class="block w100per" type="text" id="f_name" placeholder="Syötä etuinimi"> -->
+				<!-- <input class="block w100per" type="text" id="f_name" placeholder="Syötä etuinimi"> -->
+				<p class="block fs150 ma50ulr">Asunnon ilmoitukseen näkyvät tiedot</p>
+				<input class="block" type="text" id="a_kuvaus" placeholder="Syötä Asunnon nimi, lyhyt kuvaus, jne. <käytetään otiskossa>">
+				<input class="block" type="text" id="a_pintala" placeholder="Syötä asunnon pinta-ala numeroilla, esim. 45,5 tai 92">
+				<input class="block half" type="text" id="a_vuokra_takuu" placeholder="Sytötä takuuvuokra, summana">
+				<input class="block half" type="text" id="a_vuokra" placeholder="Syötä vuorasumma">
+				
+				<p class="block fs150 ma50ulr">Asunnon tiedot</p>
+				<input class="block" type="text" id="a_osoite" placeholder="Syötä asunnon osoite, esim. Mäyränkatu 35 C 2">
+				<input class="block half" type="text" id="a_postinro" placeholder="Syötä postinumero">
+				<input class="block half" type="text" id="á_kaupunki" placeholder="Syötä Kaupunki">
+				
+				<p class="block fs150 ma50ulr">Asunnon kuvuas</p>
+				<textarea class="block" id="a_kuvuas" placeholder="Syötä kuvaus..."></textarea>
+				
+				<br /><br />
+				<input class="left" type="reset" value="Tyhjennä">
+				<input class="right" type="submit" value="Lähetä">
+			</form>
+		</div>
+	</div>
+	<!-- yhteystiedot -->
+	<div id="yhteystiedot" class="tablink-div w100per h70per" style="display:none">
+			<div class="block w100per bg02">
+			<div class="left">		
+				<p class="pa10 ma25lr negative">Sijainti :: Yhteystiedot</p>
 			</div>
-		</a>
-		<a href="#ilmoitus5">
-			<div class="highlight w30per">
-				<img class="lainattu" src="style/talo_lainattu.jpg">
-				<div class="info">
-					<p class="tleft fs175">Hervanta, Tampere</p>
-					<p class="tleft fs150">3h + kk, S</p>
-				</div>
-				<div class="info">
-					<p class="tright fs150">50m2</p>
-					<p class="tright fs150 bg02 white">795 eur/kk</p>
-				</div>
-			</div>
-		</a>
-		<a href="#ilmoitus6">
-			<div class="highlight w30per">
-				<img class="lainattu" src="style/talo_lainattu.jpg">
-				<div class="info">
-					<p class="tleft fs175">Hervanta, Tampere</p>
-					<p class="tleft fs150">3h + kk, S</p>
-				</div>
-				<div class="info">
-					<p class="tright fs150">50m2</p>
-					<p class="tright fs150 bg02 white">795 eur/kk</p>
-				</div>
-			</div>
-		</a>
-		<!-- row three on FHD-->
-		<a href="#ilmoitus4">
-			<div class="highlight w30per">
-				<img class="lainattu" src="style/talo_lainattu.jpg">
-				<div class="info">
-					<p class="tleft fs175">Hervanta, Tampere</p>
-					<p class="tleft fs150">3h + kk, S</p>
-				</div>
-				<div class="info">
-					<p class="tright fs150">50m2</p>
-					<p class="tright fs150 bg02 white">795 eur/kk</p>
-				</div>
-			</div>
-		</a>
-		<a href="#ilmoitus5">
-			<div class="highlight w30per">
-				<img class="lainattu" src="style/talo_lainattu.jpg">
-				<div class="info">
-					<p class="tleft fs175">Hervanta, Tampere</p>
-					<p class="tleft fs150">3h + kk, S</p>
-				</div>
-				<div class="info">
-					<p class="tright fs150">50m2</p>
-					<p class="tright fs150 bg02 white">795 eur/kk</p>
-				</div>
-			</div>
-		</a>
-		<a class="w30per block" href="#ilmoitus6">
-			<div class="highlight w30per">
-				<img class="lainattu" src="style/talo_lainattu.jpg">
-				<div class="info">
-					<p class="tleft fs175">Hervanta, Tampere</p>
-					<p class="tleft fs150">3h + kk, S</p>
-				</div>
-				<div class="info">
-					<p class="tright fs150">50m2</p>
-					<p class="tright fs150 bg02 white">795 eur/kk</p>
-				</div>
-			</div>
-		</a>
+		</div>
 	</div>
 	<div class="block w100per h100px footer bg02">
 		<p class="grey" align="center">Asuntovuokraus Oy<br />Tekijänoikeudet Anton Hussi, 2018</p>
