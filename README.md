@@ -1,6 +1,10 @@
 # :: leenankurssi
 **[revisions]**
 
+**2018.10.13**
++ Uploaded final document for Asuntovuokras
++ Update html and css-file
+
 **2018.10.12**
 + Changes for files
 

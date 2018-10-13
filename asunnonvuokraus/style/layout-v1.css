@@ -1,4 +1,5 @@
 /* Layout style, version 1.0, 2018/10/10*/
+
 body,html {
 	margin:0;
 	padding:0;
@@ -155,6 +156,10 @@ ul.topnav li a.active {
 	height:100px;
 	padding:25px;
 }
+/* clear */
+.clear {
+	clear:both;
+}
 
 /* padding */
 .pa10 {
@@ -168,6 +173,10 @@ ul.topnav li a.active {
 /* margin */
 .ma1per {
 	margin:2%;
+}
+
+.ma5per {
+	margin:5%;
 }
 
 .ma50 {
@@ -215,16 +224,22 @@ ul.topnav li a.active {
 }
 
 .tablink-div {
+	display:block;
 	clear:both;
 }
 
 .tablink-div:after, .tablink-div:before {
 	content:"";
-	display:table;
+	display:block;
 	clear:both;	
 }
 
 /* img */
+.w20per {
+	width:125px;
+	/* border:1px solid red; */
+}
+
 .w30per {
 	width:31.3%;
 	min-width:590px;
@@ -241,8 +256,8 @@ ul.topnav li a.active {
 }
 
 .w70per {
-	width:70%;
-	margin:0 15% 0 15%;
+	width:60%;
+	margin:0 20% 0 20%;
 }
 
 .w100per {
@@ -296,6 +311,9 @@ ul.topnav li a.active {
 }
 
 /* form, selection, etc*/
+span {
+	border: 1px solid grey;
+}
 select {
 	font-size:100%;
 	width:200px;
@@ -309,27 +327,42 @@ select:hover, select:active {
 	color:#ffffff;
 }
 
-input,textarea {
+input, textarea {
 	width:92%;
 	height:30px;
 	padding:1%;
-	margiN:2% 2% 0 2%;
+	margin:1% 1% 0 3%;
 	border:1px solid blue;
 	}
 
 input.half {
-	width:42.8%;
+	width:42.9%;
+}
+
+input.third {
+	width:26.6%;
+}
+
+input[type=checkbox] {
+	margin:2% 25% 5% 25%;
+	width:50%;
 }
 
 textarea {
 	height:600px;
+	rows:10;
+}
+
+input:hover, select:hover, textarea:hover {
+	border:1px solid #ec008c;
 }
 
 input[type=submit], input[type=reset] {
-	width:autO;
-	height:50px;
-	paddin:2%;
+	width:auto;
+	height:60px;
+	padding:1%;
 	margin:5%;
+	border:1px solid #000000;
 	background:#ec008c;
 	color:#ffffff;
 	font-size:125%;

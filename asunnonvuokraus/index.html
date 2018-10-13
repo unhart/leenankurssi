@@ -26,23 +26,149 @@
 			for (i = 0; i < x.length; i++) {
 				tablinks[i].className = tablinks[i].className.replace(" active", "");
 			}
-			document.getElementById(Tab).style.display = "block!important";
+			document.getElementById(Tab).style.display = "block";
 			evt.currentTarget.className += " active";
 		}
+		$('a[data-toggle="tab"]').click(function (e) {
+			e.preventDefault();
+			$(this).tab('show');
+		});
+
+		$('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
+			var id = $(e.target).attr("href");
+			localStorage.setItem('selectedTab', id)
+		});
+
+		var selectedTab = localStorage.getItem('selectedTab');
+		if (selectedTab != null) {
+			$('a[data-toggle="tab"][href="' + selectedTab + '"]').tab('show');
+		}
+		<!-- if (location.hash) { -->
+			  <!-- $('a[href=\'' + location.hash + '\']').tab('show'); -->
+			<!-- } -->
+			<!-- var activeTab = localStorage.getItem('activeTab'); -->
+			<!-- if (activeTab) { -->
+			  <!-- $('a[href="' + activeTab + '"]').tab('show'); -->
+			<!-- } -->
+
+			<!-- $('body').on('click', 'a[data-toggle=\'tab\']', function (e) { -->
+			  <!-- e.preventDefault() -->
+			  <!-- var tab_name = this.getAttribute('href') -->
+			  <!-- if (history.pushState) { -->
+				<!-- history.pushState(null, null, tab_name) -->
+			  <!-- } -->
+			  <!-- else { -->
+				<!-- location.hash = tab_name -->
+			  <!-- } -->
+			  <!-- localStorage.setItem('activeTab', tab_name) -->
+
+			  <!-- $(this).tab('show'); -->
+			  <!-- return false; -->
+			<!-- }); -->
+			<!-- $(window).on('popstate', function () { -->
+			  <!-- var anchor = location.hash || -->
+				<!-- $('a[data-toggle=\'tab\']').first().attr('href'); -->
+			  <!-- $('a[href=\'' + anchor + '\']').tab('show'); -->
+			<!-- }); -->
+
+		<!-- $('#tablink-div a').click(function(e) { -->
+		  <!-- e.preventDefault(); -->
+		  <!-- $(this).tab('show'); -->
+		<!-- }); -->
+
+		<!-- // store the currently selected tab in the hash value -->
+		<!-- $("ul.nav > li > a").on("shown.bs.tab", function(e) { -->
+		  <!-- var id = $(e.target).attr("href").substr(1); -->
+		  <!-- window.location.hash = id; -->
+		<!-- }); -->
+
+		<!-- // on load of the page: switch to the currently selected tab -->
+		<!-- var hash = window.location.hash; -->
+		<!-- $('#tablink-div a[href="' + hash + '"]').tab('show'); -->
+		
+		function($) {
+			var tabs =  $(".tabs li a");
+		  
+				tabs.click(function() {
+					var content = this.hash.replace('/','');
+					tabs.removeClass("active");
+					$(this).addClass("active");
+				$("#content").find('p').hide();
+				$(content).fadeIn(200);
+			});
+		})(jQuery);
+		
+		var Tabs = {
+
+  init: function() {
+    this.bindUIfunctions();
+    this.pageLoadCorrectTab();
+  },
+
+  bindUIfunctions: function() {
+
+    // Delegation
+    $(document)
+      .on("click", ".transformer-tabs a[href^='#']:not('.active')", function(event) {
+        Tabs.changeTab(this.hash);
+        event.preventDefault();
+      })
+      .on("click", ".transformer-tabs a.active", function(event) {
+        Tabs.toggleMobileMenu(event, this);
+        event.preventDefault();
+      });
+
+  },
+
+  changeTab: function(hash) {
+
+    var anchor = $("[href=" + hash + "]");
+    var div = $(hash);
+
+    // activate correct anchor (visually)
+    anchor.addClass("active").parent().siblings().find("a").removeClass("active");
+
+    // activate correct div (visually)
+    div.addClass("active").siblings().removeClass("active");
+
+    // update URL, no history addition
+    // You'd have this active in a real situation, but it causes issues in an <iframe> (like here on CodePen) in Firefox. So commenting out.
+    // window.history.replaceState("", "", hash);
+
+    // Close menu, in case mobile
+    anchor.closest("ul").removeClass("open");
+
+  },
+
+  // If the page has a hash on load, go to that tab
+  pageLoadCorrectTab: function() {
+    this.changeTab(document.location.hash);
+  },
+
+  toggleMobileMenu: function(event, el) {
+    $(el).closest("ul").toggleClass("open");
+  }
+
+}
+
+Tabs.init();
 	</script>
 	<div class="block w100per">
 		<div class="left block w100per">
 			<a href="#etusivu" alt="Takaisin etusivulle"><img class="logo" src="style/logo-v2b.png"></a>
 		<!-- <div class="right block pa25"> -->
+			<nav role='navigation' class="transformer-tabs">
 			<ul class="topnav">
-				<li><a href="#haku" onclick="openTab(event, 'haku')">Haku</a></li>
-				<li><a class="active" href="#ilmoitukset" onclick="openTab(event, 'ilmoitukset')">Ilmoitukset</a></li>
-				<li><a href="#uusi" onclick="openTab(event, 'uusi')">Uusi ilmoitus</a></li>
-				<li><a href="#yhteystiedot"onclick="openTab(events, 'yhteystiedot')">Yhteystiedot</a></li>
+			
+				<li><a class="tablink" href="#haku" onclick="openTab(event, 'haku')">Haku</a></li>
+				<li><a class="tablink" href="#ilmoitukset" onclick="openTab(event, 'ilmoitukset')">Ilmoitukset</a></li>
+				<li><a class="tablink active" href="#uusi" onclick="openTab(event, 'uusi')">Uusi ilmoitus</a></li>
+				<li><a class="tablink" href="#yhteystiedot"onclick="openTab(events, 'yhteystiedot')">Yhteystiedot</a></li>
 			</ul>
+			</nav>
 		</div>
 	</div>
-
+	<!-- haku -->
 	<div id="haku" class="tablink-div w100per h70per" style="display:none">
 		<div class="block w100per bg02">
 			<div class="left">		
@@ -51,7 +177,7 @@
 		</div>
 	</div>
 	<!-- ilmoitukset -->
-	<div id="ilmoitukset" class="tablink-div w100per h70per"  style="display:none">
+	<div id="ilmoitukset" class="tablink-div w100per h70per" style="display:none">
 		<div class="block w100per bg02">
 			<div class="left">		
 				<p class="pa10 ma25lr negative">Sijainti :: Ilmoitukset</p>
@@ -188,30 +314,51 @@
 		</div>
 	</div>
 	<!-- ilmoitukset -->
-	<div id="uusi" class="tablink-div w100per h70per">
+	<div id="uusi" class="tablink-div w100per h70per" style="display:block">
 		<div class="block w100per bg02">
 			<div class="left">		
 				<p class="pa10 ma25lr negative">Sijainti :: Uusi asuntoilmoitus</p>
 			</div>
 		</div>
-		<div class="debug left automargin w70per min-width h70per">
-			<form action="hardur.php">
+		<div class="left automargin w70per min-width h70per bg00">
+			<form method="get" action="hardur.php">
 				<!-- <input class="block w100per" type="text" id="f_name" placeholder="Syötä etuinimi"> -->
 				<!-- <input class="block w100per" type="text" id="f_name" placeholder="Syötä etuinimi"> -->
 				<!-- <input class="block w100per" type="text" id="f_name" placeholder="Syötä etuinimi"> -->
-				<p class="block fs150 ma50ulr">Asunnon ilmoitukseen näkyvät tiedot</p>
-				<input class="block" type="text" id="a_kuvaus" placeholder="Syötä Asunnon nimi, lyhyt kuvaus, jne. <käytetään otiskossa>">
-				<input class="block" type="text" id="a_pintala" placeholder="Syötä asunnon pinta-ala numeroilla, esim. 45,5 tai 92">
-				<input class="block half" type="text" id="a_vuokra_takuu" placeholder="Sytötä takuuvuokra, summana">
-				<input class="block half" type="text" id="a_vuokra" placeholder="Syötä vuorasumma">
+				<p class="block fs150 ma50ulr clear">Asunnon ilmoitukseen näkyvät tiedot</p>
+				<input class="block" type="text" id="a_kuvaus" placeholder="Syötä Asunnon nimi, lyhyt kuvaus, jne. <käytetään otsikossa>">
+				<input class="block third" type="text" id="a_pintala" placeholder="Asunnon pinta-ala numeroin, esim. 43.5, 25..">
+				<input class="block third" type="text" id="a_vuokra_takuu" placeholder="Sytötä takuuvuokra euroina / yhteensä">
+				<input class="block third" type="text" id="a_vuokra" placeholder="Syötä vuorasumma euroina">
 				
-				<p class="block fs150 ma50ulr">Asunnon tiedot</p>
+				<p class="block fs150 ma50ulr clear">Asunnon tiedot</p>
 				<input class="block" type="text" id="a_osoite" placeholder="Syötä asunnon osoite, esim. Mäyränkatu 35 C 2">
 				<input class="block half" type="text" id="a_postinro" placeholder="Syötä postinumero">
-				<input class="block half" type="text" id="á_kaupunki" placeholder="Syötä Kaupunki">
+				<input class="block half" type="text" id="a_kaupunki" placeholder="Syötä Kaupunki">
 				
-				<p class="block fs150 ma50ulr">Asunnon kuvuas</p>
-				<textarea class="block" id="a_kuvuas" placeholder="Syötä kuvaus..."></textarea>
+				<p class="block fs125 ma50ulr clear">Asunnon Erityisehdot</p>
+				<div class="ma50ulr">
+					<label class="left block w20per">
+						<input class="left" type="checkbox" id="a_erityisominaisuudet_0"><p class="ma5per clear" align="middle">Sauna</p>
+					</label>
+					<label class="left block w20per">
+						<input class="left" type="checkbox" id="a_erityisominaisuudet_1"><p class="ma5per clear" align="middle">Parveke</p>
+					</label>
+					<label class="left block w20per">
+						<input class="left" type="checkbox" id="a_erityisominaisuudet_2"><p class="ma5per clear" align="middle">Hissi</p>
+					</label>
+					<label class="left block w20per">
+						<input class="left" type="checkbox" id="a_erityisominaisuudet_3"><p class="ma5per clear" align="middle">Yhteiset tilat mm. pesukone, sauna</p>
+					</label>
+					<label class="left block w20per">
+						<input class="left" type="checkbox" id="a_erityisominaisuudet_4"><p class="ma5per clear" align="middle">Lemmikkieläimet sallittu</p>
+					</label>
+					<label class="left block w20per">
+						<input class="left" type="checkbox" id="a_erityisominaisuudet_5"><p class="ma5per clear" align="middle">Tupakointi sallittu</p>
+					</label>
+				</div>
+				<p class="block fs150 ma50ulr clear">Asunnon kuvaus</p>
+				<textarea class="block" id="a_kuvuas" rows="10" placeholder="Annan asunnonkuvaus"></textarea>
 				
 				<br /><br />
 				<input class="left" type="reset" value="Tyhjennä">
@@ -230,5 +377,5 @@
 	<div class="block w100per h100px footer bg02">
 		<p class="grey" align="center">Asuntovuokraus Oy<br />Tekijänoikeudet Anton Hussi, 2018</p>
 	</div>
-<body>
+</body>
 </html>
